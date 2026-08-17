@@ -57,13 +57,13 @@ void FSR_Filter::OnCreate(Device* pDevice, ResourceViewHeaps* pResourceViewHeaps
 	defines["SAMPLE_BILINEAR"] = "0";
 	defines["SAMPLE_RCAS"] = "0";
 	defines["SAMPLE_EASU"] = "1";
-	m_easu.OnCreate(pDevice, pResourceViewHeaps, "FusionScale_Pass.hlsl", "mainCS", 1, 1, 64, 1, 1, &defines, 1, &sd);
+	m_easu.OnCreate(pDevice, pResourceViewHeaps, "FSR_Pass.hlsl", "mainCS", 1, 1, 64, 1, 1, &defines, 1, &sd);
 	defines["SAMPLE_EASU"] = "0";
 	defines["SAMPLE_RCAS"] = "1";
-	m_rcas.OnCreate(pDevice, pResourceViewHeaps, "FusionScale_Pass.hlsl", "mainCS", 1, 1, 64, 1, 1, &defines, 1, &sd);
+	m_rcas.OnCreate(pDevice, pResourceViewHeaps, "FSR_Pass.hlsl", "mainCS", 1, 1, 64, 1, 1, &defines, 1, &sd);
 	defines["SAMPLE_RCAS"] = "0";
 	defines["SAMPLE_BILINEAR"] = "1";
-	m_bilinear.OnCreate(pDevice, pResourceViewHeaps, "FusionScale_Pass.hlsl", "mainCS", 1, 1, 64, 1, 1, &defines, 1, &sd);
+	m_bilinear.OnCreate(pDevice, pResourceViewHeaps, "FSR_Pass.hlsl", "mainCS", 1, 1, 64, 1, 1, &defines, 1, &sd);
 	defines["SAMPLE_BILINEAR"] = "0";
 }
 
