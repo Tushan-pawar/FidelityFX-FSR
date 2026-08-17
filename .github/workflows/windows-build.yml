@@ -38,7 +38,7 @@ jobs:
           echo "Cauldron checkout: OK"
 
       - name: Configure
-        run: cmake -S sample -B sample/build-win -A x64
+        run: cmake -S sample -B sample/build-win -A x64 -DGFX_API=DX12
 
       - name: Build
         run: cmake --build sample/build-win --config Release
