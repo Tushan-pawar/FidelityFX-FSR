@@ -13,10 +13,10 @@ set(sources
     dpiawarescaling.manifest)
 
 set(Shaders_src
-    ${CMAKE_CURRENT_SOURCE_DIR}/FSR_Pass.hlsl
+    ${CMAKE_CURRENT_SOURCE_DIR}/FusionScale_Pass.hlsl
     ${CMAKE_CURRENT_SOURCE_DIR}/FSR_Tonemapping.hlsl
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../../ffx-fsr/ffx_a.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../../ffx-fsr/ffx_fsr1.h)
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../../fusionscale/include/fusionscale_a.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../../fusionscale/include/fusionscale_fsr1.h)
 
 source_group("Sources" FILES ${sources})
 source_group("shaders" FILES ${Shaders_src})

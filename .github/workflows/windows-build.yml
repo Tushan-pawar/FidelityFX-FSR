@@ -1,0 +1,19 @@
+
+name: FusionScale Windows DX12 Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure
+        run: cmake -S sample -B sample/build-win -A x64
+
+      - name: Build
+        run: cmake --build sample/build-win --config Release
