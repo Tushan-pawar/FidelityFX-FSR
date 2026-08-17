@@ -21,6 +21,14 @@ jobs:
           ls -la sample/libs
           ls -la sample/libs/Cauldron || true
 
+      - name: Initialize submodules
+        shell: bash
+        run: |
+          git submodule sync --recursive
+          git submodule update --init --recursive
+          git submodule status --recursive
+          test -f sample/libs/Cauldron/CMakeLists.txt
+
       - name: Configure
         run: cmake -S sample -B sample/build-win -A x64
 
