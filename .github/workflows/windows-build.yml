@@ -14,6 +14,13 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Diagnose submodules
+        shell: bash
+        run: |
+          git submodule status --recursive
+          ls -la sample/libs
+          ls -la sample/libs/Cauldron || true
+
       - name: Configure
         run: cmake -S sample -B sample/build-win -A x64
 
