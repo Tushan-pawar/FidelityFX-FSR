@@ -42,3 +42,10 @@ jobs:
 
       - name: Build
         run: cmake --build sample/build-win --config Release
+
+      - name: Upload FusionScale DX12 build
+        uses: actions/upload-artifact@v4
+        with:
+          name: FusionScale-DX12
+          path: sample/bin/**
+          if-no-files-found: error
