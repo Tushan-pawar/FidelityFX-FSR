@@ -29,6 +29,14 @@ jobs:
           git submodule status --recursive
           test -f sample/libs/Cauldron/CMakeLists.txt
 
+      - name: Verify Cauldron
+        shell: bash
+        run: |
+          git submodule status --recursive
+          test -f sample/libs/Cauldron/CMakeLists.txt
+          test -f sample/libs/Cauldron/common.cmake
+          echo "Cauldron checkout: OK"
+
       - name: Configure
         run: cmake -S sample -B sample/build-win -A x64
 
