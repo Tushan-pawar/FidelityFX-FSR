@@ -43,9 +43,17 @@ jobs:
       - name: Build
         run: cmake --build sample/build-win --config Release
 
+      - name: Prepare FusionScale package
+        shell: bash
+        run: |
+          mkdir -p fusion-package/bin
+          mkdir -p fusion-package/media
+          cp -r sample/bin/. fusion-package/bin/
+          cp -r sample/media/Cauldron-Media fusion-package/media/
+
       - name: Upload FusionScale DX12 build
         uses: actions/upload-artifact@v4
         with:
           name: FusionScale-DX12
-          path: sample/bin/**
+          path: fusion-package/**
           if-no-files-found: error
